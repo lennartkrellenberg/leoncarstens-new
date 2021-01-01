@@ -1,0 +1,32 @@
+.gallery {
+  grid-template-rows: repeat(30, 100px) !important; }
+
+@media screen and (max-width: 1199.98px) {
+  .gallery {
+    grid-template-rows: repeat(38, 100px) !important; }
+  .image9 {
+    grid-row: span 4; }
+  .image16 {
+    grid-row: span 5; }
+  .image18 {
+    grid-row: span 5; }
+  .image33 {
+    grid-column: span 2; } }
+
+@media screen and (max-width: 991.98px) {
+  .gallery {
+    grid-template-rows: repeat(60, 100px) !important; }
+  .image8 {
+    grid-row: span 4; }
+  .image10 {
+    grid-row: span 4; }
+  .image15 {
+    grid-row: span 5; }
+  .image18 {
+    grid-row: span 4; }
+  .image19 {
+    grid-row: span 4; }
+  .image30 {
+    grid-row: span 4; }
+  .image34 {
+    grid-column: span 2; } }

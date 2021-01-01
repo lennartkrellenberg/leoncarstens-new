@@ -1,0 +1,24 @@
+{
+  "name": "starter-project",
+  "version": "1.0.0",
+  "description": "A Project to start",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lennart Krellenberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lennartkrellenberg/starter-project/issues"
+  },
+  "homepage": "https://github.com/lennartkrellenberg/starter-project#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta1",
+    "popper.js": "^1.16.1"
+  }
+}

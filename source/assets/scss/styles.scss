@@ -1,0 +1,390 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: white;
+}
+
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.button {
+  border-radius: 0.5rem;
+}
+
+//Navbar -->
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding-top: 50px;
+}
+
+.brand-title a {
+  text-decoration: none;
+  font-size: 32px;
+  font-family: "Caveat Brush", cursive;
+  color: white;
+}
+
+.brand-title a:hover {
+  color: #555;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links div {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links li a:hover {
+  color: #555;
+}
+
+.insta {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+}
+
+.toggle-button {
+  background-image: url(../img/menu_icon.svg);
+  background-size: cover;
+  position: absolute;
+  top: 0.25rem;
+  left: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 35px;
+  margin-top: 50px;
+}
+
+.clear-button {
+  background-image: url(../img/clear_icon.svg);
+}
+
+//<-- Navbar
+
+//--> Main Section
+.main-section {
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+//<-- Main Section
+
+//Gallery Section -->
+.gallery-section {
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.gallery {
+  pointer-events: none;
+  cursor: default;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(11, 100px);
+  grid-template-rows: repeat(13, 100px);
+  grid-gap: 20px;
+}
+
+.gallery-item {
+  object-fit: cover;
+  background-position: center;
+  background-color: #555;
+  width: 100%;
+  height: 100%;
+}
+
+.xsmall {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.small {
+  grid-row: span 3;
+  grid-column: span 4;
+}
+
+.normal {
+  grid-row: span 3;
+  grid-column: span 5;
+}
+
+.large {
+  grid-row: span 4;
+  grid-column: span 7;
+}
+
+.long {
+  grid-row: span 4;
+  grid-column: span 2;
+}
+
+.potrait {
+  grid-row: span 3;
+  grid-column: span 2;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer img {
+  width: 200px;
+}
+
+.footer p {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.tag {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.tag a:hover {
+  color: #f7ea4f !important;
+}
+
+.mail {
+  text-decoration: underline !important;
+}
+
+.footer a:hover {
+  color: #555;
+}
+
+.footer div {
+  width: 275px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+//Large Devices (desktops)
+@media screen and (max-width: 1199.98px) {
+  .brand-title {
+    margin-left: 20px;
+  }
+
+  .navbar-links {
+    margin-right: 20px;
+  }
+  .gallery {
+    grid-template-rows: repeat(20, 100px);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .potrait {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  .normal {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .xsmall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .small {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  .large {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .long {
+    grid-column: span 1;
+    grid-row: span 4;
+  }
+}
+
+//Medium Devices (tablets)
+@media screen and (max-width: 991.98px) {
+  .brand-title {
+    margin-left: 0;
+  }
+
+  .navbar-links {
+    margin-right: 0;
+  }
+
+  .gallery-section {
+    margin: 100px 0;
+  }
+  .gallery {
+    justify-content: center;
+    grid-template-rows: repeat(23, 100px);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .potrait {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  .normal {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .xsmall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .small {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  .large {
+    grid-column: span 2;
+    grid-row: span 4;
+  }
+
+  .long {
+    grid-column: span 1;
+    grid-row: span 4;
+  }
+}
+
+//Small Devices (phones)
+@media screen and (max-width: 575.98px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-black {
+    background-color: rgba($color: #000, $alpha: 0.5);
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    height: 90vh;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 0.1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .gallery {
+    justify-content: center;
+    grid-template-rows: repeat(auto-fill, 100px);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .potrait {
+    grid-column: span 1 !important;
+    grid-row: span 4;
+  }
+
+  .normal {
+    grid-column: span 1 !important;
+    grid-row: span 3;
+  }
+
+  .xsmall {
+    grid-column: span 1 !important;
+    grid-row: span 3;
+  }
+
+  .small {
+    grid-column: span 1 !important;
+    grid-row: span 3;
+  }
+
+  .large {
+    grid-column: span 1 !important;
+    grid-row: span 4;
+  }
+
+  .long {
+    grid-column: span 1 !important;
+    grid-row: span 4;
+  }
+}
