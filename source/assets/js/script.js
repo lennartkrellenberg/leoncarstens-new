@@ -17,6 +17,11 @@ function unhover(element) {
     element.setAttribute('src', './assets/img/Instagram_white.png');
 }
 
+window.addEventListener('load', () => {
+    const preload = document.querySelector('.preload');
+    preload.classList.add('preload-finish')
+})
+
 
 
 
