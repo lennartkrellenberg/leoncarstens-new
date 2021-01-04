@@ -1,0 +1,56 @@
+.datenschutz {
+  margin-top: 50px;
+  margin-bottom: 150px;
+  font-family: "Poppins", sans-serif;
+}
+
+.datenschutz a {
+  color: white;
+  text-decoration: none;
+}
+
+.datenschutz a:hover {
+  color: #555;
+}
+
+.datenschutz h3 {
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-family: "Caveat Brush", cursive;
+  font-weight: normal;
+}
+
+.datenschutz p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  list-style: none;
+}
+
+.datenschutz h5 {
+  margin-top: 40px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+#forContent {
+  margin-top: 10px;
+}
+
+#forLinks {
+  margin-top: 30px;
+}
+
+#Urheberrecht {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 1300px) {
+  .brand-title {
+    margin-left: 20px;
+  }
+  .datenschutz {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
