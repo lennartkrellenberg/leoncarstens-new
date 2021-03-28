@@ -32,13 +32,16 @@ window.addEventListener('load', () => {
 
 images.forEach((image) => {
 
+    console.log("start " + modalImg.src);
+
     image.addEventListener("click", () => {
         displayIMG();
+        console.log("click " + modalImg.src);
+
 
 
         async function changeIMG() {
             modalImg.src = image.src.replace("webp", "jpg");
-            return;
         }
 
         async function displayIMG() {
@@ -52,6 +55,9 @@ images.forEach((image) => {
 
         modal.addEventListener("click", () => {
             modal.classList.remove("appear");
+            modalImg.src = ""
+            console.log("close " + modalImg.src);
+
         });
     });
 });
