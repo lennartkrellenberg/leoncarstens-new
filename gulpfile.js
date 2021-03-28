@@ -1,7 +1,5 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const webp = require('gulp-webp');
-
 const browserSync = require('browser-sync').create();
 
 // compile scss into css
@@ -30,20 +28,30 @@ function watch() {
     gulp.watch('./source/assets/js/**/*.js').on('change', browserSync.reload);
     gulp.watch('./source/assets/img/**').on('change', browserSync.reload,);
 
+    browserSync.init({
+        server: {
+            baseDir: './source'
+        }
+    });
+
 
 
 
 }
 
-function build() {
-    gulp.task('default', () =>
-        gulp.src('./source/assets/img/*')
-            .pipe(webp())
-            .pipe(gulp.dest('./build/assets/img'))
-    );
-    gulp.src('./source/*.html').pipe(gulp.dest('./build'));
-    gulp.src('./source/assets/js/**/*.js').pipe(gulp.dest('./build/assets/js'));
-    gulp.src('./source/assets/scss/**/*.scss').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('./build/assets/css'));
+async function build() {
+    gulp.task('simpleTaskName', function () {
+        gulp.src('./source/*.html').pipe(gulp.dest('./build'));
+        gulp.src('./source/assets/js/**/*.js').pipe(gulp.dest('./build/assets/js'));
+        gulp.src('./source/assets/scss/**/*.scss').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('./build/assets/css'));
+    });
+
+    browserSync.init({
+        server: {
+            baseDir: './source'
+        }
+    });
+
 
 
 
