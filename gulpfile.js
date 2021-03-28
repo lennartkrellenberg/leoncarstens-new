@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const webp = require('gulp-webp');
+
 const browserSync = require('browser-sync').create();
 
 // compile scss into css
@@ -34,16 +36,19 @@ function watch() {
 }
 
 function build() {
+    gulp.task('default', () =>
+        gulp.src('./source/assets/img/*')
+            .pipe(webp())
+            .pipe(gulp.dest('./build/assets/img'))
+    );
     gulp.src('./source/*.html').pipe(gulp.dest('./build'));
     gulp.src('./source/assets/js/**/*.js').pipe(gulp.dest('./build/assets/js'));
-    gulp.src('./source/assets/img/*').pipe(gulp.dest('./build/assets/img'));
-    gulp.src('./source/assets/scss/**/*.scss').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('./build/assets/css'))
+    gulp.src('./source/assets/scss/**/*.scss').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('./build/assets/css'));
 
-    browserSync.init({
-        server: {
-            baseDir: './build'
-        }
-    });
+
+
+
+
 }
 
 
