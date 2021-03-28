@@ -31,9 +31,23 @@ window.addEventListener('load', () => {
 
 
 images.forEach((image) => {
+
     image.addEventListener("click", () => {
-        modalImg.src = image.src.replace("webp", "jpg");
-        modal.classList.add("appear");
+        displayIMG();
+
+
+        async function changeIMG() {
+            modalImg.src = image.src.replace("webp", "jpg");
+            return;
+        }
+
+        async function displayIMG() {
+            await changeIMG();
+            modal.classList.add("appear");
+
+        }
+
+
 
 
         modal.addEventListener("click", () => {
