@@ -15,51 +15,32 @@ function style() {
         .pipe(browserSync.stream());
 }
 
-function watch() {
-    style();
+
+
+
+
+async function browserwatch() {
+    gulp.watch('./build/assets/css/*.css').on('change', browserSync.reload);
+    gulp.watch('./build/**/*.html').on('change', browserSync.reload);
+    gulp.watch('./build/*.html').on('change', browserSync.reload);
+    gulp.watch('./build/assets/js/**/*.js').on('change', browserSync.reload);
+    gulp.watch('./build/assets/img/**').on('change', browserSync.reload,);
     browserSync.init({
         server: {
-            baseDir: './source'
+            baseDir: './build'
         }
     });
-    gulp.watch('./source/assets/scss/*.scss', style);
-    gulp.watch('./source/**/*.html').on('change', browserSync.reload);
-    gulp.watch('./source/*.html').on('change', browserSync.reload);
-    gulp.watch('./source/assets/js/**/*.js').on('change', browserSync.reload);
-    gulp.watch('./source/assets/img/**').on('change', browserSync.reload,);
-
-    browserSync.init({
-        server: {
-            baseDir: './source'
-        }
-    });
-
-
-
-
-}
-
-async function build() {
-    gulp.task('simpleTaskName', function () {
-        gulp.src('./source/*.html').pipe(gulp.dest('./build'));
-        gulp.src('./source/assets/js/**/*.js').pipe(gulp.dest('./build/assets/js'));
-        gulp.src('./source/assets/scss/**/*.scss').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('./build/assets/css'));
-    });
-
-    browserSync.init({
-        server: {
-            baseDir: './source'
-        }
-    });
-
-
-
-
-
-
 }
 
 
-exports.build = build;
+
+
+
+
+
+
+
+
+
 exports.style = style;
-exports.watch = watch;
+exports.browserwatch = browserwatch;

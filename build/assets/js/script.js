@@ -33,8 +33,8 @@ window.addEventListener('load', () => {
 images.forEach((image) => {
     image.addEventListener("click", () => {
         modalImg.src = image.src.replace("webp", "jpg");
-        modalTxt.innerHTML = image.alt;
         modal.classList.add("appear");
+
 
         modal.addEventListener("click", () => {
             modal.classList.remove("appear");
